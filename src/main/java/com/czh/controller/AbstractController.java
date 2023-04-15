@@ -1,16 +1,17 @@
 package com.czh.controller;
 
 import com.czh.service.AbstractService;
+import com.czh.util.Message;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public abstract class AbstractController<T, Service extends AbstractService<T>> 
 
     public Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
+    @Resource
     protected Service service;
 
     @ResponseBody
